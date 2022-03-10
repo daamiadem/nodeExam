@@ -1,0 +1,98 @@
+
+<html>
+<body>
+<h1> {{ title }} </h1>
+<ul>
+
+
+ 
+
+    {% for c in Stag %}
+         <li>{{ c.cin }}</li>
+         <li>{{ c.nom }}</li>
+         <li>{{ c.prenom }}</li>
+           <li>{{ c.sexe }}</li>
+         <li>{{ c.email }}</li>
+         <li>{{ c.telephone }}</li>
+         <li>{{ c.option }}</li>
+
+    {% endfor %}
+</ul>
+
+
+
+<form action="/Stagaire" method="post" >
+    cin : <input type="text" id="cin" name="cin" placeholder="cin">
+    <br/>
+    nom : <input type="text" id="nom" name="nom" placeholder="nom">
+    prenom : <input type="text" id="prenom" name="prenom" placeholder="prenom">
+    <br/>
+    sexe : <label><input type="radio" id="sexe" name="sexe" value="Femme">Femme</label>
+     <label><input type="radio" id="sexe" name="sexe" value="Homme">Homme</label>
+     <br/>
+    email : <input type="text" id="email" name="email" placeholder="email">
+    <br/>
+    telephone : <input type="text" id="telephone" name="telephone" placeholder="telephone">
+    <br/>
+    option : <select name="option" id="option">
+  <option value="Twin">Twin</option>
+  <option value="GL">GL</option>
+  <option value="SIM">SIM</option>
+  <option value="ARCTIC">ARCTIC</option>
+</select>
+    <input type="submit" value="Ajouter">
+</form>
+
+
+{# <ul>
+    {% for c in cont %}
+        <li>{{c.FullName}} - {{c.Phone}} - {{c._id}}  <a href="/contact/delete/{{c._id}}" class="btn">delete</a></li>
+    {%endfor %}
+</ul> #}
+
+<!-- 
+<h1> {{ title2 }} </h1>
+
+<input type="text" id="FullName" name="FullName" placeholder="Recherche"> <a href="/contact/{{c._id}}" class="btn">Recherche par id </a> -->
+{# 
+<form action="/contact/" method="GET">
+    <input type="search" name="q" aria-label="Search">
+    <button type="submit" >Search</button>
+ </form> #}
+<!-- 
+ <input type="search" id="Recherche" name="q" aria-label="Search">
+ <a type="button" href="/contact/q">Search</a> -->
+
+{# <ul>
+         <li>{{ contactById.FullName }}</li>
+         <li>{{ contactById.Phone }}</li>
+
+</ul> #}
+
+
+<table>
+   <tr>
+       <th>CIN</th>
+       <th>Nom</th>
+       <th>prenom</th>
+       <th>Sexe</th>
+       <th>email</th>
+       <th>tel</th>
+       <th>option</th>
+   </tr>
+ {% for c in Stag %}
+   <tr>
+       <td>{{ c.cin }}</td>
+       <td>{{ c.nom }}</td>
+       <td>{{ c.prenom }}</td>
+       <td>{{ c.sexe }}</td>
+       <td>{{ c.email }}</td>
+       <td>{{ c.telephone }}</td>
+       <td>{{ c.option }}</td>
+   </tr>
+     {% endfor %}
+  
+</table>
+
+</body>
+</html>
